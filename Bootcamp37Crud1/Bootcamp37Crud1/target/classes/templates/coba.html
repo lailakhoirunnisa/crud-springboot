@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <title>Region</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Person CRUD</h1>
+            <br>
+    </div>        
+      <div>
+        <form th:action="@{/search}">
+            <h2>Search</h2>
+            <p><input type="text" name="keyword" id="keyword" size="20" th:value="${keyword}" required ></p>
+    
+    <input type="submit" value="Search">
+    
+    <input type="button" value="Clear" id="btnClear" onclick="clearSearch()" >
+</form>
+      </div>
+        <br>    
+        
+                     <form action="#" th:action ="@{/save}" th:object="${person}" method="post">
+                    <label>Id</label>
+                    <p><input type="number" id="textId" class ="form-control" th:field="*{id}" required></p>
+                    
+                    <label>Name</label>
+                    <p><input type="text" id="textName" class ="form-control" th:field="*{name}" pattern="[A-Za-z]" required></p>
+                                        <label>Email</label>
+                    <p><input type="text" id="textEmail" class ="form-control" th:field="*{email}" pattern="[A-Za-z]" required></p>
+                    
+                                        <label>Age</label>
+                    <p><input type="number" id="textAge" class ="form-control" th:field="*{age}" pattern="[0-9]" required></p>
+                    
+                                        <label>Gender</label>
+                    <p><input type="text" id="textGender" class ="form-control" th:field="*{name}" pattern="[A-Za-z]" required></p>
+                    <br>
+                    <input type ="submit" value="Save"> 
+                           <input type="reset" value="Reset">
+                           </form>
+        <br>
+        
+        <div>
+        <h2>DATA PERSON</h2>
+        <br>
+        <table border="1" cellpadding="10" cellspacing="0">
+            
+            <tr>
+                    <th> ID</th>
+                    <th> Name</th>
+                    <th> Email</th>
+                    <th> Age</th>
+                    <th> Gender</th>
+                    <th>Action</th>
+                </tr>
+            
+            
+            
+            <tr th:each ="p : ${persons}">
+                <td th:text ="${p.id}">id</td>
+                <td th:text ="${p.name}">name</td>
+                <td th:text ="${p.email}">email</td>
+                <td th:text ="${p.age}">age</td>
+                <td th:text ="${p.gender}">gender</td>
+              <td><a th:href="@{/save">Edit</a> 
+              <td><a th:href ="@{'/delete/' + ${p.id}}" type="button" value="Delete">Delete</a></td></tr>
+                 
+             
+            </table>
+                          
+        
+<!--            < th: action ="@{/save}" th:object="${region}" method="POST">
+                <label>Region Id</label>
+                <input type="text" id="textId" class ="form-control" th:field="*{id}"><br><br>
+                <label>Region Name</label>
+                <input type="text" id="textName" class ="form-control" th:field="*{name}"><br><br>
+                <input type ="submit" value="Save"
+                       -->
+    
+                
+        
+                             
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/}]]";
+    }
+</script>      
+</div>
+    </body>
+</html>

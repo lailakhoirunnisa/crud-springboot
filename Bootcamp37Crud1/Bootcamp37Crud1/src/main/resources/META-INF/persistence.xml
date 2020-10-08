@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Bootcamp-37-1_Bootcamp37Crud1_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Employee</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Booking1</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Department</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Team</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Approval</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Booking</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Room</class>
+    <class>Bootcamp371.Bootcamp37Crud1.entities.Person</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3406/meetingschedule?zeroDateTimeBehavior=convert_To_Null"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="b0o7c@mp"/>
+    </properties>
+  </persistence-unit>
+</persistence>
